@@ -84,8 +84,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ user, onLogin }) => {
 
           <p className="text-2xl md:text-4xl text-indigo-100/95 leading-relaxed max-w-5xl mx-auto font-medium">
             {isAr 
-              ? "في EduCareer مش بنشرحلك كلام نظري احنا بندربك ازاي تشتغل من قبل حتي ما تشتغل"
-              : "At EduCareer, we don't just explain theoretical concepts; we train you on how to work before you even start working."}
+              ? "EduCareer هي منصة محاكاه لسوق العمل هدفها سد الفجوه بين التعليم الجامعي وسوق العمل عن طريق تدريبات عمليه من تاسكات يوميه ومشاريع شهريه لتأهيل الطالب للشغل الحقيقي"
+              : "EduCareer is a job market simulation platform aimed at bridging the gap between university education and the labor market through practical training including daily tasks and monthly projects to qualify students for real work."}
           </p>
           
           <div className="flex flex-wrap gap-6 pt-8 justify-center">
