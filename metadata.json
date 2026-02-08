@@ -1,0 +1,8 @@
+{
+  "name": "Copy of CareerHub - Bridge to Success",
+  "description": "منصة تعليمية متكاملة لسد الفجوة بين التعليم الجامعي وسوق العمل من خلال محاكاة واقعية للمهام والمشاريع في تخصصات الأعمال المختلفة.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
