@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLanguageToggle }) => {
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
               <Briefcase className="w-6 h-6" />
             </div>
-            <span className="text-2xl font-black text-indigo-900 tracking-tighter">CareerHub</span>
+            <span className="text-2xl font-black text-indigo-900 tracking-tighter">EduCareer</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">

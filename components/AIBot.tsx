@@ -49,7 +49,7 @@ const AIBot: React.FC<AIBotProps> = ({ specialization, language }) => {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-tighter">CareerHub AI Mentor</p>
+                <p className="text-xs font-bold uppercase tracking-tighter">EduCareer AI Mentor</p>
                 <p className="text-[10px] opacity-70 italic">Experience work before you work</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ const AIBot: React.FC<AIBotProps> = ({ specialization, language }) => {
               <div className="text-center py-10 space-y-3">
                 <Sparkles className="w-8 h-8 text-indigo-200 mx-auto" />
                 <p className="text-sm text-slate-400">
-                  {isAr ? 'مرحباً! أنا مدربك الذكي في CareerHub، كيف يمكنني مساعدتك في تخصصك اليوم؟' : 'Hi! I am your CareerHub AI Mentor, how can I help you today?'}
+                  {isAr ? 'مرحباً! أنا مدربك الذكي في EduCareer، كيف يمكنني مساعدتك في تخصصك اليوم؟' : 'Hi! I am your EduCareer AI Mentor, how can I help you today?'}
                 </p>
               </div>
             )}

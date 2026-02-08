@@ -15,6 +15,12 @@ import AIBot from './components/AIBot';
 import { User, Specialization, Language } from './types';
 import { SPECIALIZATIONS, getIconForSpec } from './constants';
 
+// Fixed: Moved ProtectedRoute outside to avoid re-definition and correctly type children prop
+const ProtectedRoute: React.FC<{ user: User | null; children: React.ReactNode }> = ({ user, children }) => {
+  if (!user) return <Navigate to="/auth" replace />;
+  return <>{children}</>;
+};
+
 const AppContent: React.FC<{
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
@@ -35,7 +41,6 @@ const AppContent: React.FC<{
   };
 
   const handleCompleteAssessment = (score: number, level: number) => {
-    // نحدد التخصص الذي كان قيد الاختبار
     const selectedSpec = pendingSpec;
     if (user && selectedSpec) {
       setUser({
@@ -44,7 +49,6 @@ const AppContent: React.FC<{
         assessmentScore: score,
         level: level
       });
-      // ننتقل أولاً ثم نمسح الـ pendingSpec لتفادي إعادة التوجيه التلقائي من الـ Route
       navigate('/dashboard');
       setTimeout(() => setPendingSpec(null), 500);
     }
@@ -59,18 +63,18 @@ const AppContent: React.FC<{
     }
   };
 
-  const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    if (!user) return <Navigate to="/auth" replace />;
-    return <>{children}</>;
-  };
-
   return (
     <div className="flex flex-col min-h-screen" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header user={user || { name: 'زائر', language, level: 0 }} onLanguageToggle={toggleLanguage} />
       <div className="flex-1">
         <Layout>
           <Routes>
-            <Route path="/" element={<LandingPage onLogin={() => navigate('/auth')} />} />
+            <Route path="/" element={
+              <LandingPage 
+                user={user} 
+                onLogin={() => navigate('/auth')} 
+              />
+            } />
             
             <Route path="/discover" element={
               <div className="max-w-7xl mx-auto py-8">
@@ -120,16 +124,15 @@ const AppContent: React.FC<{
               }} />
             } />
 
-            <Route path="/dashboard" element={<ProtectedRoute><Dashboard user={user!} onCompleteTask={handleCompleteTask} /></ProtectedRoute>} />
+            <Route path="/dashboard" element={<ProtectedRoute user={user}><Dashboard user={user!} onCompleteTask={handleCompleteTask} /></ProtectedRoute>} />
             <Route path="/assessment" element={
-              <ProtectedRoute>
-                {/* تم تعديل الحارس ليكون أكثر مرونة أثناء الانتقال */}
+              <ProtectedRoute user={user}>
                 <Assessment specialization={pendingSpec || user?.selectedSpecialization!} onComplete={handleCompleteAssessment} language={language} />
               </ProtectedRoute>
             } />
-            <Route path="/tasks" element={<ProtectedRoute><Dashboard user={user!} onCompleteTask={handleCompleteTask} /></ProtectedRoute>} />
-            <Route path="/projects" element={<ProtectedRoute><Projects user={user!} /></ProtectedRoute>} />
-            <Route path="/portfolio" element={<ProtectedRoute><Portfolio user={user!} /></ProtectedRoute>} />
+            <Route path="/tasks" element={<ProtectedRoute user={user}><Dashboard user={user!} onCompleteTask={handleCompleteTask} /></ProtectedRoute>} />
+            <Route path="/projects" element={<ProtectedRoute user={user}><Projects user={user!} /></ProtectedRoute>} />
+            <Route path="/portfolio" element={<ProtectedRoute user={user}><Portfolio user={user!} /></ProtectedRoute>} />
             
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

@@ -15,8 +15,8 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
     e.preventDefault();
     onLogin({
       id: '1',
-      name: name || 'طالب مسار',
-      email: email || 'user@careerhub.com',
+      name: name || 'طالب EduCareer',
+      email: email || 'user@educareer.com',
       level: 1,
       completedTasks: [],
       portfolio: []
@@ -30,7 +30,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
           <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/20">
             <Briefcase className="w-8 h-8" />
           </div>
-          <h1 className="text-2xl font-bold">CareerHub</h1>
+          <h1 className="text-2xl font-bold">EduCareer</h1>
           <p className="text-indigo-200 text-sm mt-2">مرحباً بك في مستقبل مسارك المهني</p>
         </div>
 
@@ -101,7 +101,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
           </form>
 
           <p className="text-center text-slate-400 text-sm mt-6">
-            بتسجيلك أنت توافق على شروط الخدمة وسياسة الخصوصية لـ CareerHub
+            بتسجيلك أنت توافق على شروط الخدمة وسياسة الخصوصية لـ EduCareer
           </p>
         </div>
       </div>

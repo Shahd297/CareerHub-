@@ -89,7 +89,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user, onCompleteTask }) => {
         <div className="space-y-2 relative z-10">
           <div className="flex items-center gap-2 mb-2">
              <GraduationCap className="w-6 h-6 text-indigo-400" />
-             <span className="text-sm font-bold uppercase tracking-widest text-indigo-300">{isAr ? 'رحلة تعلمك في CareerHub' : 'Your Learning Journey'}</span>
+             <span className="text-sm font-bold uppercase tracking-widest text-indigo-300">{isAr ? 'رحلة تعلمك في EduCareer' : 'Your Learning Journey'}</span>
           </div>
           <h1 className="text-4xl font-black">
             {isAr ? specInfo?.title.ar : specInfo?.title.en}
@@ -265,8 +265,8 @@ const Dashboard: React.FC<DashboardProps> = ({ user, onCompleteTask }) => {
                 <h3 className="font-bold text-lg mb-2">{isAr ? 'فرصة التدريب العملي' : 'Internship Opportunity'}</h3>
                 <p className="text-xs text-indigo-100 leading-relaxed mb-4">
                   {isAr 
-                    ? 'بإنهائك 10 مهام أخرى وإكمال موديولات هذا المستوى بنجاح، ستصبح مرشحاً لتدريبات الشركات الشريكة.' 
-                    : 'By finishing 10 more tasks and completing this levels modules, you will be eligible for partner internships.'}
+                    ? 'بإنهائك 10 مهام أخرى وإكمال موديولات هذا المستوى بنجاح، ستصبح مرشحاً لتدريبات الشركات الشريكة في EduCareer.' 
+                    : 'By finishing 10 more tasks and completing this levels modules, you will be eligible for partner internships at EduCareer.'}
                 </p>
                 <div className="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
                    <div className="w-1/3 h-full bg-white rounded-full"></div>
@@ -283,8 +283,8 @@ const Dashboard: React.FC<DashboardProps> = ({ user, onCompleteTask }) => {
              </div>
              <p className="text-xs text-amber-800 leading-relaxed italic">
                {isAr 
-                 ? '"تذكر أن الممارسة هي جوهر CareerHub. لا تكتفي بمشاهدة الموديولات، بل طبق كل مهارة في المهمة اليومية لتحصل على أفضل تقييم."' 
-                 : '"Remember, practice is the heart of CareerHub. Dont just watch modules, apply every skill in the daily task for the best feedback."'}
+                 ? '"تذكر أن الممارسة هي جوهر EduCareer. لا تكتفي بمشاهدة الموديولات، بل طبق كل مهارة في المهمة اليومية لتحصل على أفضل تقييم."' 
+                 : '"Remember, practice is the heart of EduCareer. Dont just watch modules, apply every skill in the daily task for the best feedback."'}
              </p>
            </div>
         </div>
